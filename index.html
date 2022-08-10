@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!--Lưu ý chèn js theo thứ tự main cần sử dụng danhsachsinhvien, danhsachsinhvien cần sử dụng sinhvien-->
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="logo"></div>
+	<div class="container">
+		<h2>Thông tin sinh viên</h2>
+		<form>
+			<div class="form-group">
+				<label for="masv">Mã SV:</label>
+				<input type="text" class="form-control" id="masv"  placeholder="Nhập MaSV" name="MaSV">
+			</div>
+			<div class="form-group">
+				<label for="hoten">Họ tên:</label>
+				<input type="text" class="form-control" id="hoten" placeholder="Nhập Họ tên" name="hoten">
+			</div>
+			<div class="form-group">
+				<label for="cmnd">CMND:</label>
+				<input type="text" class="form-control" id="cmnd" placeholder="Nhập CMND" name="cmnd">
+			</div>
+			<div class="form-group">
+				<label for="sdt">Điện thoại:</label>
+				<input type="text" class="form-control" id="sdt" placeholder="Nhập SDT" name="sdt">
+			</div> 
+
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email" placeholder="Nhập Email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="Toan">Toán:</label>
+				<input type="number" class="form-control" id="Toan" placeholder="Nhập Toán" name="Toan">
+			</div>
+			<div class="form-group">
+				<label for="Ly">Lý:</label>
+				<input type="number" class="form-control" id="Ly" placeholder="Nhập Lý" name="Ly">
+			</div>
+			<div class="form-group">
+				<label for="Hoa">Hóa:</label>
+				<input type="number" class="form-control" id="Hoa" placeholder="Nhập Hóa" name="Hoa">
+			</div>
+			<button type="button" class="btn btn-success" onclick="ThemSinhVien()">Thêm sinh viên</button>
+			<button type="button" class="btn btn-primary" onclick="LuuThongTin()"> Lưu</button>
+		</form>
+		<div style="float: right;">
+		<button class="btn btn-success" onclick="SetStorage()">Lưu storage</button>
+		<button class="btn btn-primary" onclick="GetStorage()">Lấy storage</button>
+		<button class="btn btn-danger" onclick="XoaSinhVien()">Xóa sinh viên</button>
+		</div>
+	</div>
+	<!--table bootstrap 4 -->
+	<div class="clearfix"></div>
+	<br>
+	<div class="container">
+	 <div class="right">
+	 	<div class="input-group">
+	 		<input type="text" id="tukhoa" onkeyup="TimKiemSinhVien()" onchange="TimKiemSinhVien()" class="form-control" placeholder="Nhập vào họ tên ...">
+	 		<span class="input-group-btn">
+	 			<button class="btn btn-secondary" onclick="TimKiemSinhVien()" type="button">Tìm kiếm</button>
+	 		</span>
+	 	</div>
+	 	<br />
+	 	<div class="alert alert-success" id="ThongBao"></div>
+	 </div>
+	  <h2>Danh sách sinh viên</h2>
+	  <p> </p>
+	  <table id="TableSinhVien" class="table" >
+	    <thead>
+	      <tr>
+	      	<th></th>
+	        <th>MaSV</th>
+	        <th>HoTen</th>
+	        <th>Email</th>
+	        <th>CMND</th>
+	        <th>Điện thoại</th>
+	        <th>Điểm TB</th>
+	        <th>Xếp loại</th>
+	      </tr>
+	    </thead>
+	    <tbody id="tbodySinhVien">
+	      <tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+	      </tr>      
+	    </tbody>
+	  </table>
+	</div>
+	<script type="text/javascript" src="./SinhVien.js"></script>
+	<script type="text/javascript" src="./DanhSachSinhVien.js"></script>
+	<script type="text/javascript" src="./Validation.js"></script>
+	<script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
